@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ha5bd3scl07k"]
+[gd_scene format=3 uid="uid://ha5bd3scl07k"]
 
 [ext_resource type="Texture2D" uid="uid://d3ox2xbh27dk7" path="res://assets/sprites/slime_green.png" id="1_3kxc7"]
-[ext_resource type="Script" path="res://script/slime.gd" id="1_dssna"]
+[ext_resource type="Script" uid="uid://kop7kmo8m5fi" path="res://script/slime.gd" id="1_dssna"]
 [ext_resource type="PackedScene" uid="uid://cl137enl1hqe8" path="res://scene/killzone.tscn" id="2_0jjrf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ciwvo"]
@@ -35,7 +35,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6xrfp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
@@ -43,24 +43,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0o0hd"]
 size = Vector2(9, 11)
 
-[node name="slime" type="Node2D"]
+[node name="slime" type="Node2D" unique_id=1408089446]
 script = ExtResource("1_dssna")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=122568131]
 sprite_frames = SubResource("SpriteFrames_dndgg")
 autoplay = "default"
-frame_progress = 0.355295
+frame_progress = 0.49275526
 
-[node name="killzone" parent="AnimatedSprite2D" instance=ExtResource("2_0jjrf")]
+[node name="killzone" parent="AnimatedSprite2D" unique_id=1480016371 instance=ExtResource("2_0jjrf")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone" unique_id=1389031381]
 position = Vector2(0.5, 5.5)
 shape = SubResource("RectangleShape2D_0o0hd")
 
-[node name="RayCast_ rigt" type="RayCast2D" parent="."]
+[node name="RayCast_ rigt" type="RayCast2D" parent="." unique_id=1118235988]
 position = Vector2(0, 6)
 target_position = Vector2(10, 0)
 
-[node name="RayCast_ left" type="RayCast2D" parent="."]
+[node name="RayCast_ left" type="RayCast2D" parent="." unique_id=293305929]
 position = Vector2(0, 6)
 target_position = Vector2(-10, 0)

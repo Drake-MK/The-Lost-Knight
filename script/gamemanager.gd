@@ -1,10 +1,23 @@
+class_name gamemanager
 extends Node
-var max_score = 8
+
+@export var next_level: PackedScene
+@export var coins: Node
+@export var player: CharacterBody2D
+
 var score = 0
+var max_score = 8
+
+func load_next_level() -> void:
+	if next_level:
+		get_tree().change_scene_to_packed(next_level)
+	else:
+		printerr("Next level scene is not set!")
+
 
 func add_coin():
 	pass
 	score+= 1
 	print(score)
 	if score == max_score:
-		get_tree().change_scene_to_file("res://scene/Level 2/level_2.tscn")
+		load_next_level()

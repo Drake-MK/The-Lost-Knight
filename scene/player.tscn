@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://bxq01frjfrvyv"]
+[gd_scene format=3 uid="uid://bxq01frjfrvyv"]
 
 [ext_resource type="Texture2D" uid="uid://kmwbhov2tup" path="res://assets/sprites/knight.png" id="1_257yt"]
-[ext_resource type="Script" path="res://scene/player.gd" id="1_r6s20"]
+[ext_resource type="Script" uid="uid://d2450vyad1243" path="res://scene/player.gd" id="1_r6s20"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hoxp5"]
 atlas = ExtResource("1_257yt")
@@ -118,7 +118,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iigrv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 10.0
 }, {
@@ -138,7 +138,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3aieu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 15.0
 }, {
@@ -191,7 +191,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0yl2r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 10.0
 }]
@@ -199,17 +199,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_g5k5b"]
 radius = 5.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=2055414014]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_r6s20")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1079464557]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_cw201")
 animation = &"jump"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284689781]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_g5k5b")
